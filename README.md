@@ -1,7 +1,9 @@
 
 # AngularWAMP
 
-AngularWAMP is an AngularJS wrapper for [AutobahnJS](https://github.com/tavendo/AutobahnJS) (v 0.9.5) for WAMP v2 (Web Application Messaging Protocol).
+This is a fork of AngularWAMP is an AngularJS wrapper for [AutobahnJS](https://github.com/tavendo/AutobahnJS) (v 0.9.5) for WAMP v2 (Web Application Messaging Protocol).
+
+The fork was introduced to implement an easy solution for front-end developement without the need for bower. By installing this package you can link the following autobahn.js specified below without having conficts via the npm version. 
 
 It simplifies getting WAMP v2 integrated into your AngularJS application.  For the most part, it's works just like AutobahnJS, with a couple of angular related changes, which are noted below.
 
@@ -35,11 +37,25 @@ To use AngularWAMP in your project, you need to include the following files in y
 #### With NPM
 
 ```bash
-$ npm install angular-wamp
+$ npm install angular-wamp-built
 ```
 
 And then you can import angular-wamp into your js files:
 
+##### Frontend Developement / Without RequireJS
+```
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+<!-- AutobahnJS - built -->
+<script src="node_modules/autobahn-js-built/autobahn.min.js"></script>
+
+<!-- AngularWAMP -->
+<script src="bower_components/angular-wamp/release/angular-wamp.js"></script>
+```
+
+
+##### Backend Developemnt / RequireJS
 ```js
 import angular     from 'angular';
 import angularWamp from 'angular-wamp';
@@ -60,6 +76,7 @@ export default angular.module('app.starter', [angularWamp])
 angular.bootstrap(document, ['app.starter']);
 
 ```
+##### Frontend Developement / Without RequireJS
 
 ## Documentation
 
